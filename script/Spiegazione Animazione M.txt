@@ -1,0 +1,53 @@
+const mGroups = document.querySelectorAll('svg g[opacity="0"]');
+
+Cerca tutti gli elementi g all'interno del tuo SVG che hanno l'attributo opacity="0". Questi sono gli elementi che inizialmente sono nascosti e che verranno animati.
+
+const maxVisibleM = 8;
+
+Definisce quante "M" possono essere visibili contemporaneamente. 
+
+Ho impostato un limite di 8, il che significa che al massimo 8 "M" appariranno allo stesso tempo.
+
+let currentlyVisible = 0;
+
+È un contatore che tiene traccia di quante "M" sono attualmente visibili.
+
+function getRandomNumber(min, max):
+
+Questa è una funzione che restituisce un numero casuale tra un valore minimo e un valore massimo. 
+
+L'ho usata per decidere tempi e indici casuali.
+
+function animateSingleM():
+
+Questa è la funzione più importante, che gestisce l'animazione di una singola "M". 
+
+Controlla se ci sono abbastanza "M" nascoste e se non ha raggiunto il limite massimo di "M" visibili (maxVisibleM). 
+
+Se no, si ferma.
+
+Trova una "M" a caso tra quelle che sono nascoste (opacity="0").
+
+La mostra impostando opacity = "1" e aggiungendo una transizione (transition: "opacity 0.3s ease-in-out") per rendere l'apparizione fluida.
+
+Incrementa il contatore currentlyVisible.
+
+Dopo un tempo casuale (tra 800 e 2000 millisecondi, cioè tra 0.8 e 2 secondi), usa setTimeout per nascondere nuovamente quella "M" (opacity = "0") e decrementa currentlyVisible.
+
+function startAnimation():
+
+Questa funzione si occupa di far partire l'animazione in loop.
+
+Decide un intervallo di tempo casuale (tra 150 e 400 millisecondi) prima di chiamare animateSingleM().
+
+Dopo aver chiamato animateSingleM(), richiama se stessa con un nuovo setTimeout. 
+
+Questo crea un loop infinito che fa apparire e scomparire le "M" continuamente.
+
+document.addEventListener("DOMContentLoaded", function () { setTimeout(animateMSvg, 1000); });
+
+Questo pezzo di codice assicura che l'animazione parta solo quando tutta la pagina HTML è stata caricata.
+
+Aggiunge un piccolo ritardo di 1 secondo (setTimeout(animateMSvg, 1000)) prima di avviare la funzione animateMSvg(). 
+
+Questo è utile per dare tempo al browser di renderizzare completamente l'SVG, evitando problemi.
