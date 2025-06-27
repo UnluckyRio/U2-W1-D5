@@ -1,0 +1,127 @@
+/* Navbar sticky in alto, sfondo bianco, bordo inferiore sottile */
+header {
+  position: sticky; /* Rende la navbar sempre visibile in alto */
+  top: 0;
+  background: #ffc017;
+  z-index: 100;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between; /* Spazio tra logo a sinistra e navbar a destra */
+  align-items: center; /* Centra verticalmente gli elementi all'interno dell'header */
+  border-bottom: 1px solid #191919;
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px; /* Spazio tra logo e menu */
+  margin-left: 100px;
+}
+
+nav {
+  display: flex; /* Rende nav un flex container */
+  align-items: center; /* Centra verticalmente la navbar */
+  height: 100%; /* Occupa tutta l'altezza dell'header */
+  margin-right: 100px; /* Allinea la navbar a destra con un margine */
+}
+
+.logo svg {
+  height: 200px;
+  width: 200px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px; /* Spazio tra le voci del menu */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #242424;
+  font-size: 16px;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  color: #1a8917; /* Verde Medium all'hover */
+}
+
+/* Pulsante Get started */
+nav ul li:last-child a {
+  background: #191919;
+  color: #fff;
+  border-radius: 99em;
+  padding: 8px 20px;
+  font-weight: 600;
+  margin-left: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+nav ul li:last-child a:hover {
+  background: #1a8917;
+  color: #fff;
+  border-radius: 99em;
+  padding: 8px 20px;
+  font-weight: 600;
+  margin-left: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* main */
+
+.yellow-container {
+  background: #ffc017;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #191919;
+  height: auto;
+}
+
+.left-yellow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+}
+
+.left-yellow-container h1 {
+  font-size: 100px;
+  font-weight: 500;
+  color: #000;
+  font-family: "Spectral", serif;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.left-yellow-container p {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #191919;
+  margin-left: 4.2em;
+  margin-top: 1em;
+}
+
+.right-yellow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+}
+
+.right-yellow-container #M {
+  width: 1px;
+  height: 1px;
+}
