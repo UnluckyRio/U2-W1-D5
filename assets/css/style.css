@@ -38,6 +38,11 @@ nav {
   color: white;
   background-color: black;
   border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.buttonNav button:hover {
+  background-color: #4caf50;
 }
 .section1 {
   display: flex;
@@ -75,6 +80,11 @@ section button {
   background-color: black;
   border: none;
   margin: 10px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+section button:hover {
+  background-color: #4caf50;
 }
 .divSvg {
   position: absolute;
@@ -236,4 +246,104 @@ h4 {
   color: rgba(0, 0, 0, 0.541);
   font-size: 14px;
   margin: 10px;
+}
+
+/* Media Query per Mobile (fino a 1120px) */
+@media screen and (max-width: 1120px) {
+  /* Navbar responsive per mobile */
+  nav {
+    width: 95%; /* Aumenta la larghezza per mobile */
+    flex-direction: column; /* Cambia il layout in colonna */
+    gap: 15px; /* Aggiunge spazio tra gli elementi */
+    padding-block: 10px; /* Riduce ulteriormente il padding */
+  }
+
+  .buttonNav {
+    flex-wrap: wrap; /* Permette il wrap dei bottoni */
+    justify-content: center; /* Centra i bottoni */
+    gap: 10px; /* Aggiunge spazio tra i bottoni */
+  }
+
+  .buttonNav a {
+    font-size: 14px; /* Riduce la dimensione del font */
+    margin-right: 0.5rem; /* Riduce il margine destro */
+  }
+
+  .buttonNav button {
+    width: 80px; /* Riduce la larghezza del bottone */
+    height: 35px; /* Riduce l'altezza del bottone */
+    font-size: 12px; /* Riduce la dimensione del font */
+  }
+
+  /* Sezione principale per mobile */
+  section {
+    flex-direction: column; /* Cambia il layout in colonna */
+    padding-block: 40px; /* Riduce il padding verticale */
+    text-align: center; /* Centra il testo */
+  }
+
+  .section1 {
+    width: 100%; /* Occupa tutta la larghezza */
+    padding-inline: 20px; /* Riduce ulteriormente il padding */
+    font-size: 20px; /* Riduce la dimensione del font */
+    align-items: center; /* Centra gli elementi */
+  }
+
+  h1 {
+    font-size: 40px; /* Riduce significativamente la dimensione del titolo */
+    text-align: center; /* Centra il titolo */
+  }
+
+  /* Nasconde l'SVG su mobile per risparmiare spazio */
+  .divSvg {
+    display: none; /* Nasconde l'elemento SVG su mobile */
+  }
+
+  /* Layout degli articoli per mobile */
+  .divArt {
+    width: 100%; /* Gli articoli occupano tutta la larghezza */
+    flex-direction: column; /* Cambia il layout in colonna */
+    align-items: center; /* Centra gli elementi */
+    text-align: center; /* Centra il testo */
+  }
+
+  .divNumName {
+    justify-content: center; /* Centra il numero e nome */
+  }
+
+  .article {
+    flex-direction: column; /* Cambia il layout in colonna */
+    align-items: center; /* Centra gli elementi */
+    text-align: center; /* Centra il testo */
+  }
+
+  .imgArt {
+    width: 100%; /* L'immagine occupa tutta la larghezza disponibile */
+    max-width: 300px; /* Limita la larghezza massima */
+    height: auto; /* Mantiene le proporzioni */
+  }
+
+  /* Sidebar per mobile */
+  .divRight {
+    position: static; /* Rimuove il posizionamento sticky */
+    margin-inline: 10px; /* Riduce i margini laterali */
+    width: 100%; /* Occupa tutta la larghezza */
+    margin-top: 30px; /* Aggiunge spazio sopra */
+  }
+
+  .bigDiv2 {
+    margin-top: 30px; /* Riduce il margine superiore */
+  }
+
+  /* Aggiusta i link della sidebar per mobile */
+  .divAncore a {
+    margin: 3px; /* Riduce i margini */
+    padding: 8px; /* Riduce il padding */
+    font-size: 12px; /* Riduce la dimensione del font */
+  }
+
+  .divAncore2 a {
+    margin: 5px; /* Riduce i margini */
+    font-size: 12px; /* Riduce la dimensione del font */
+  }
 }
