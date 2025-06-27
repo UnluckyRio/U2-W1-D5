@@ -81,6 +81,8 @@ nav ul li:last-child a:hover {
 
 /* main */
 
+/* yellow container */
+
 .yellow-container {
   background: #ffc017;
   display: flex;
@@ -88,6 +90,8 @@ nav ul li:last-child a:hover {
   border-bottom: 1px solid #191919;
   height: auto;
 }
+
+/* Left yellow container */
 
 .left-yellow-container {
   display: flex;
@@ -114,14 +118,217 @@ nav ul li:last-child a:hover {
   margin-top: 1em;
 }
 
-.right-yellow-container {
+.left-yellow-container button {
+  background: #191919;
+  width: 150px;
+  color: #fff;
+  text-align: center;
+  border: none;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  align-items: right;
-  justify-content: right;
+  align-items: center;
+  justify-content: center;
+  border-radius: 99em;
+  padding: 8px 20px;
+  font-weight: 600;
+  margin-top: 2em;
+  margin-left: 7em;
 }
 
-.right-yellow-container #M {
-  width: 1px;
-  height: 1px;
+.left-yellow-container button a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+.left-yellow-container button:hover {
+  background: #1a8917;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* M */
+
+/* white container */
+
+.white-container {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #d9d9d9;
+  height: auto;
+}
+
+/* white container h2 */
+
+.white-container h2 {
+  display: flex; /* Rende h2 un flex container */
+  align-items: center; /* Centra verticalmente SVG e testo */
+  gap: 0.5em; /* Spazio tra SVG e testo */
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.white-container h2 svg {
+  height: 2em; /* Altezza proporzionata al testo */
+  width: 2em;
+  margin-top: 0; /* Rimuove margine superiore per allineamento */
+  flex-shrink: 0;
+}
+
+/* Sezione trending: griglia 3 colonne */
+.trending-container {
+  display: grid; /* Disposizione a griglia */
+  grid-template-columns: repeat(3, 1fr); /* 3 colonne */
+  gap: 2em; /* Spazio tra gli elementi */
+  margin: 2em 1em;
+}
+
+.trending-item {
+  display: flex; /* Disposizione orizzontale */
+  flex-direction: row;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1em;
+  min-height: 100px;
+  position: relative;
+  gap: 1em; /* Spazio tra numero e il resto */
+}
+
+.trending-item-number {
+  font-size: 2em; /* Numero grande */
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #d7d7d7;
+  align-self: flex-start;
+  margin-top: 0.2em;
+  margin-right: 0.5em;
+}
+
+.trending-item-right {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.8em; /* Spazio tra immagine e testo */
+}
+
+.trending-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 0;
+}
+
+.trending-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.trending-item .author,
+.trending-item h3,
+.trending-item .date {
+  margin-left: 0;
+}
+
+.trending-item .author {
+  margin-top: 0.2em;
+}
+
+.trending-item h3 {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin: 0.2em 0 0.2em 0;
+  color: #191919;
+}
+
+.trending-item .date {
+  font-size: 0.9em;
+  color: #757575;
+}
+
+/* in */
+
+.in {
+  font-size: inherit; /* Eredita la dimensione dal genitore, cioè .author */
+  color: #757575;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Griglia articoli principali (simile a Medium) */
+.articles-grid {
+  display: grid; /* Disposizione a griglia */
+  grid-template-columns: 2fr 1fr; /* Colonna principale e sidebar */
+  gap: 3em;
+  margin: 3em 2em;
+}
+
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5em;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.5em;
+}
+
+.article-content {
+  flex: 2;
+}
+
+.article-image {
+  flex: 1;
+  min-width: 120px;
+  max-width: 180px;
+}
+
+.article-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.article .author {
+  font-size: 0.95em;
+  color: #191919;
+  margin-bottom: 0.2em;
+}
+
+.article h3 {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin: 0.2em 0 0.2em 0;
+  color: #191919;
+}
+
+.article .date {
+  font-size: 0.9em;
+  color: #757575;
+}
+
+/* Sidebar articoli */
+.sidebar {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
