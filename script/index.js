@@ -16,8 +16,8 @@ function animateMSvg() {
   // Seleziona tutti i gruppi g che contengono le M nell'SVG
   const mGroups = document.querySelectorAll('svg g[opacity="0"]');
 
-  // Numero massimo di M visibili contemporaneamente
-  const maxVisibleM = 3; // Puoi modificare questo valore per avere più o meno M visibili
+  // Numero massimo di M visibili contemporaneamente - aumentato per maggiore visibilità
+  const maxVisibleM = 8; // Aumentato da 3 a 8 per rendere l'animazione più visibile
   let currentlyVisible = 0;
 
   // Funzione per ottenere un numero casuale tra min e max
@@ -46,17 +46,17 @@ function animateMSvg() {
     randomM.style.transition = "opacity 0.3s ease-in-out";
     currentlyVisible++;
 
-    // Dopo un tempo casuale, nascondi la M
-    const hideDelay = getRandomNumber(1000, 3000); // Tra 1 e 3 secondi
+    // Dopo un tempo casuale, nascondi la M - ridotto il tempo per animazione più dinamica
+    const hideDelay = getRandomNumber(800, 2000); // Ridotto da 1000-3000ms a 800-2000ms
     setTimeout(() => {
       randomM.style.opacity = "0";
       currentlyVisible--;
     }, hideDelay);
   }
 
-  // Avvia l'animazione con intervalli casuali
+  // Avvia l'animazione con intervalli casuali - ridotto l'intervallo per più frequenza
   function startAnimation() {
-    const interval = getRandomNumber(200, 600); // Intervallo casuale tra 200ms e 600ms
+    const interval = getRandomNumber(150, 400); // Ridotto da 200-600ms a 150-400ms
     setTimeout(() => {
       animateSingleM();
       startAnimation(); // Richiama ricorsivamente per continuare l'animazione
